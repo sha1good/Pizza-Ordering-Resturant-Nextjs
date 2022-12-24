@@ -1,0 +1,148 @@
+.container {
+  padding: 50px;
+  display: flex;
+}
+
+.left {
+  flex: 2;
+}
+
+.table {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 50px;
+  border-spacing: 20px;
+}
+
+.row {
+  width: 100%;
+}
+
+.row:last-child {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.done {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inProgress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: inProgress 1s ease-in-out infinite alternate;
+}
+
+@keyframes inProgress {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.undone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.3;
+}
+
+.undone .checkedIcon,
+.inProgress .checkedIcon {
+  display: none;
+}
+
+.right {
+  flex: 1;
+}
+
+.wrapper {
+  width: 90%;
+  background-color: #333;
+  padding: 50px;
+  padding-top: 10px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.totalTitleText {
+  margin-right: 10px;
+}
+
+.button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: white;
+  color: teal;
+  border: none;
+  cursor: not-allowed;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .trTitle{
+    display: none;
+  }
+
+  .tr{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+  }
+
+  .id::before{
+    content: "Order ID: ";
+    font-weight: 500;
+  }
+
+  .name::before{
+    content: "Name: ";
+    font-weight: 500;
+  }
+
+  .address::before{
+    content: "Address: ";
+    font-weight: 500;
+  }
+  .total::before{
+    content: "Total: ";
+    font-weight: 500;
+  }
+
+  .row:last-child{
+     flex-direction: column;
+     width: 100%;
+     align-items: center;
+     justify-content: center;
+     
+  }
+
+  .done,.undone, .inProgress{
+    margin-bottom: 20px;
+  }
+
+  .wrapper{
+    width: 100%;
+  }
+}
